@@ -70,7 +70,7 @@
 #define DATA_DEFAULT_GLOBAL_RATE_L 0xE8 ///< Lower byte of the default global recording rate.
 #define DATA_DEFAULT_EXT_TYPE      0x01 ///< Default external sensor type.
 #define DATA_DEFAULT_GPS_THRESHOLD 0x05 ///< Default GPS threshold.
-#define DATA_DEFAULT_BT_BAUD       0x04 ///< Default bluetooth baud rate.
+#define DATA_DEFAULT_BT_BAUD       0x09 ///< Default bluetooth baud rate.
 
 #define DATA_FLAG_OFF 0x00 ///< Bootloader flag value for normal operation.
 #define DATA_FLAG_ON  0xFF ///< Bootloader flag value for update mode.
