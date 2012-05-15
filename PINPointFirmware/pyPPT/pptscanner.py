@@ -75,4 +75,23 @@ def noiseTest(num):
     print
     print [min(dats), max(dats), sum(dats) / len(dats)]
 
-    
+def writeCSV():
+    for ppt in findPPTs():
+        name = "PPT#" + str(ppt.readEepromConfig()["serialNumber"]) + ".csv"
+        csv = open(name, 'w')
+
+        tot = ppt.dataHeader
+        cur = 0
+
+        print("Writing to " + name + "...\r\n")
+
+        csv.write("Time, Lat, Lon, Altitude, Pressure, Temperature, Humidity\r\n")
+
+        for dat in ppt.getDataGenerator():
+            csv.write(('{date},{latitude:5.8f},{longitude:5.8f},{altitude:6d},{pressure:7d} ' + \
+                ',{temperature:3.2f},{humidity:3.1f}\r\n').format(**dat.dataDict))
+            cur += ppt.dataPointSize
+            print'%3.2f' % (float(cur) / float(tot) * 100.0)
+
+        csv.close()
+        
