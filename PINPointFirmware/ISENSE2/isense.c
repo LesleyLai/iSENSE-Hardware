@@ -81,7 +81,7 @@ status init(void)
     
     data_Init();
 
-    if (user_Get_Button(BUTTON_CLEAR))
+    if (user_Get_Button(BUTTON_CLEAR) && user_Get_Button(BUTTON_START) && user_Get_Button(BUTTON_STOP))
     {
 
         for (i = 0; i < 50; i++)
