@@ -136,21 +136,9 @@ int main (void)
     {
         user_Handle_Buttons(&runData);
         
-        user_Set_LED(LED_CLEAR, 1);
-        user_Set_LED(LED_STOP,  0);
-        user_Set_LED(LED_START, 0);
-        
         coms_Handle(&runData);
-        
-        user_Set_LED(LED_CLEAR, 1);
-        user_Set_LED(LED_STOP,  1);
-        user_Set_LED(LED_START, 0);
 
         dataReady = sensor_Read(&data);
-
-        user_Set_LED(LED_CLEAR, 1);
-        user_Set_LED(LED_STOP,  1);
-        user_Set_LED(LED_START, 1);
         
         recordReady |= timer_Job_Ready4(&(runData.recordTimer), runData.recordPeriod, &(runData.recordLastTime), false);
 
@@ -176,15 +164,7 @@ int main (void)
             sensor_Reset(&data);
         }
         
-        user_Set_LED(LED_CLEAR, 0);
-        user_Set_LED(LED_STOP,  1);
-        user_Set_LED(LED_START, 1);
-        
         timer_Sleep();
-        
-        user_Set_LED(LED_CLEAR, 0);
-        user_Set_LED(LED_STOP,  0);
-        user_Set_LED(LED_START, 1);
     }
 }
 
