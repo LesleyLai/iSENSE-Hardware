@@ -308,7 +308,7 @@ public class RestAPIDbAdapter {
     
     public Cursor getExperimentTags(int exp_id) {
     	String[] tables = new String[1];
-    	tables[0] = KEY_TAGS;
+    	tables[0] = KKEY_TAGS;
     	Cursor mCursor = mDb.query(true, DATABASE_TABLE_EXPERIMENT_TAGS, tables, KEY_EXPERIMENT_ID + " = " + exp_id, null, null, null, null, null);
 
     	if (mCursor!= null) {
